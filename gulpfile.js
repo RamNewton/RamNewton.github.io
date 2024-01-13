@@ -71,13 +71,31 @@ function jekyll(done) {
     .on('close', done);
 }
 
+/**
+ * Watch source files for changes & recompile
+ * Watch html/md files, run Jekyll & reload BrowserSync
+ */
+function watchData() {
+  gulp.watch(
+    [ '_data/*.yml', '_config.yml', 'assets/*.json' ],
+    gulp.series(jekyll, browserSyncReload)
+  );
+}
+
+function watchMarkup() {
+  gulp.watch(
+    [ 'index.html', '_includes/*.html', '_layouts/*.html' ],
+    gulp.series(jekyll, browserSyncReload)
+  );
+}
+
 function watchStyles() {
   gulp.watch([ '_sass/*.scss' ], styles);
 }
 
 var compile = gulp.parallel(styles, stylesVendors);
 var serve = gulp.series(compile, jekyll, browserSyncServe);
-var watch = gulp.parallel(watchStyles);
+var watch = gulp.parallel(watchData, watchMarkup, watchStyles);
 
 
 /**

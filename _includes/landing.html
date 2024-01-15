@@ -21,7 +21,7 @@
 
       {% if data.github_username != null %}
         <a class="social-link" aria-label="My GitHub" target="_blank" rel="noreferrer"
-          href="https://github.com/{{site.github_username}}"
+          href="https://github.com/{{data.github_username}}"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -37,7 +37,7 @@
 
       {% if data.linkedin_username != null %}
         <a class="social-link linkedin" aria-label="My LinkedIn" target="_blank"
-          rel="noreferrer" href="https://www.linkedin.com/in/{{site.linkedin_username}}"
+          rel="noreferrer" href="https://www.linkedin.com/in/{{data.linkedin_username}}"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -53,7 +53,7 @@
 
       {% if data.dev_username != null %}
         <a class="social-link" aria-label="My DEV" target="_blank" rel="noreferrer"
-          href="https://dev.to/{{site.dev_username}}"
+          href="https://dev.to/{{data.dev_username}}"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
@@ -69,7 +69,7 @@
 
       {% if data.twitter_username != null %}
         <a class="social-link twitter" aria-label="My Twitter" target="_blank"
-          rel="noreferrer" href="https://twitter.com/{{site.twitter_username}}"
+          rel="noreferrer" href="https://twitter.com/{{data.twitter_username}}"
         >
           <svg viewBox="0 0 200 200" class="circle">
             <circle cx="100" cy="100" r="80" />
